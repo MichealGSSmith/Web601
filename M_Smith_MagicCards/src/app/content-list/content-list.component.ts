@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
-import {MagicServicesService} from './services/magic-services.service';
-
-
+import { MagicServicesService } from '../services/magic-services.service';
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
@@ -12,19 +10,21 @@ export class ContentListComponent implements OnInit {
   
   message: string = "";
   flag: boolean = false;
-  content: Content[];
+  Content: Content[] = [];
 
-  constructor(private ) {
-    this.content = [];
-      
+  constructor(private movieService: MagicServicesService) {
+       this.Content = [];
+  
   }
    
 
   ngOnInit(): void {
-    
+    this.movieService.getMagicList().subscribe(list => {
+      this.Content = list;
+    });
   }
   checkTitle(search: string): void{
-    let searchList = this.content.filter(content => content.title == search);
+    let searchList = this.Content.filter(content => content.title == search);
     if (searchList.length > 0) {
       this.message = "Found Your Card!!";
       this.flag = true;

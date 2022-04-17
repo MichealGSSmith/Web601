@@ -20,7 +20,7 @@ export class HoverAffectDirective {
         if(this.elementType == "type") {
             this.elm.nativeElement.style.textDecoration = "underline";
         } else if (this.elementType == "tag" ) {
-            this.elm.nativeElement.style.textDecoration = "bold";
+            this.elm.nativeElement.style.fontWeight = "bold";
         } else if (this.elementType == "card" && this.firstOrLast) {
             this.elm.nativeElement.style.border = "4px dashed"
         }
