@@ -12,14 +12,14 @@ export class ContentListComponent implements OnInit {
   flag: boolean = false;
   Content: Content[] = [];
 
-  constructor(private movieService: MagicServicesService) {
+  constructor(private magicService: MagicServicesService) {
        this.Content = [];
   
   }
    
 
   ngOnInit(): void {
-    this.movieService.getMagicList().subscribe(list => {
+    this.magicService.getMagicList().subscribe(list => {
       this.Content = list;
     });
   }
@@ -33,7 +33,9 @@ export class ContentListComponent implements OnInit {
       this.flag = false;
     }
   }
-  donothing(){
-
+  addContentToList(newContentItem: Content): void{
+    this.magicService.getMagicList().subscribe(list => {
+      this.Content = list;
+    });
   }
 }

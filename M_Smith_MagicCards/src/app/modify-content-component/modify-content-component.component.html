@@ -1,0 +1,25 @@
+<div>
+    ID: <input [(ngModel)]="tempId">
+</div>
+<div>
+    Title: <input [(ngModel)]="newContent.title">
+</div>
+
+<div>
+    Image: <input [(ngModel)]="newContent.imgURL">
+</div>
+<div>
+    description: <input [(ngModel)]="newContent.description">
+</div>
+<div>
+    Type: <input [(ngModel)]="newContent.type">
+</div>
+<div>
+    Creator: <input [(ngModel)]="newContent.creator">
+</div>
+<div>
+    Tags: <input [(ngModel)]="tempTags">
+</div>
+<div>
+    <button (click)="addContentFromChild()">{{tempId === "" ? "Add New Card" : "Update existing Card"}}</button>
+</div>
