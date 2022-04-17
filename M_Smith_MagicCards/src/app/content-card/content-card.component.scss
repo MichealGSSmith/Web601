@@ -1,0 +1,55 @@
+:host{
+    border: 1px solid #000000;
+    display: block;
+    margin: 15px auto;
+    padding: 9px;
+    width: 495px;
+    text-align: center;
+}
+
+:host.first-content{
+    border: 3px solid #000000;
+}
+
+:host.notype {
+    background-color: cadetblue;
+}
+
+:host.Black {
+    background-color:blueviolet;
+}
+:host.Red {
+    background-color:darkgoldenrod;
+}
+:host.Blue {
+    background-color:hotpink;
+}
+:host.White {
+    background-color:darkmagenta;
+}
+
+:host.Green {
+    background-color:lightskyblue;
+}
+
+:host.found {
+    border-color: green;
+    border-width: 7px;
+}
+
+:host.single-item-on-app-component {
+    box-shadow: 5px 10px #88888899;
+}
+
+.image{
+    width: 250px;
+}
+
+.tag{
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    background-color: aquamarine;
+    margin: 7px;
+    padding: 8px;
+}
