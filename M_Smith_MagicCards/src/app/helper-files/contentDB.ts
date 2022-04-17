@@ -1,6 +1,5 @@
-import {Content } from "./content-interface";
-
-export const CONTENTLIST: Content[] = [{
+import {Content} from "./content-interface";
+export const CARDLIST: Content[] = [{
     id: 0,
     title: "Black Lotus",
     description: "Power 9 Original Card",
