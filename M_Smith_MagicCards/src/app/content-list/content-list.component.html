@@ -2,8 +2,11 @@
 
 
 <div class="search">
-    <input #search>
-    <button (click)="checkTitle(search.value)">Look For Card</button>
+    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Search</mat-label>
+        <input matInput #search>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="checkTitle(search.value)">Look For Card</button>
     <h3 class="success" *ngIf="flag">Card Found</h3>
     <h3 class="fail" *ngIf="!flag">Card Found</h3>    
 </div>

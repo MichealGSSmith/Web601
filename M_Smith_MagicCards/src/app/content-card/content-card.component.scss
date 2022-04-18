@@ -7,37 +7,37 @@
     text-align: center;
 }
 
-:host.first-content{
+mat-card {
     border: 3px solid #000000;
 }
 
-:host.notype {
+&.notype mat-card{
     background-color: cadetblue;
 }
 
-:host.Black {
+&.Black  mat-card{
     background-color:blueviolet;
 }
-:host.Red {
+&.Red mat-card{
     background-color:darkgoldenrod;
 }
-:host.Blue {
+&.Blue mat-card{
     background-color:hotpink;
 }
-:host.White {
+&.White mat-card{
     background-color:darkmagenta;
 }
 
-:host.Green {
+&.Green mat-card{
     background-color:lightskyblue;
 }
 
-:host.found {
+&.found  mat-card{
     border-color: green;
     border-width: 7px;
 }
 
-:host.single-item-on-app-component {
+&.single-item-on-app-component mat-card{
     box-shadow: 5px 10px #88888899;
   }
 

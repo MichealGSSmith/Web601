@@ -1,20 +1,26 @@
 
-
-<h2 class="title">{{content?.title}}</h2>
-<img (click)="imageClicked()" *ngIf="content?.imgUrl" class="image" [src]="content?.imgUrl">
-<img (click)="imageClicked()" *ngIf="!content?.imgUrl" class="image" src="https://mtgproshop.com/wp-content/uploads/2020/10/MTG-PW-Symbol.png.webp">
-<p class="body">
-    {{content?.description}}
-</p>
-<div class="meta-data">
-    <div class="creator">
-        {{content?.creator}}
-    </div>
-    <div *ngIf="content?.type" class="content?.type">
-        {{content?.type}}
-    </div>
-    <div class="tags" *ngIf="content?.tags">
-        <span appHoverAffect elementType="tag" class="tag" *ngFor="let tag of content?.tags">{{tag}}</span>
-    
-    </div>
-</div>
+<mat-card *ngIf="content">
+    <mat-card-header>
+     
+      <mat-card-title>{{ content?.title }} - {{ content?.creator }}</mat-card-title>
+      <mat-card-subtitle appHoverAffect elementType="type" *ngIf="content?.type" class="movie?.type">
+        {{ content?.type }}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image (click)="imageClicked()" *ngIf="content?.imgUrl" class="image" [src]="content?.imgUrl">
+    <img mat-card-image (click)="imageClicked()" *ngIf="!content?.imgUrl" class="image"
+      src="https://mtgproshop.com/wp-content/uploads/2020/10/MTG-PW-Symbol.png.webp"> 
+    <mat-card-content>
+      <p>
+        {{ content?.description }}
+      </p>
+      <mat-chip-list aria-label="Tags of the content" *ngIf="content?.tags">
+        <mat-chip appHoverAffect elementType="tag" *ngFor="let tag of content?.tags">
+          #{{ tag }}
+        </mat-chip>
+      </mat-chip-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <app-modify-content-component [newContent]="content"></app-modify-content-component>
+    </mat-card-actions>
+  </mat-card>
