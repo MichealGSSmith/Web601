@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { MagicServicesService } from '../services/magic-services.service';
+
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
