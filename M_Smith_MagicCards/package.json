@@ -1,6 +1,6 @@
 {
   "name": "m-smith-magic-cards",
-  "version": "0.0.4",
+  "version": "0.0.8",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
