@@ -23,7 +23,7 @@ export class InMemoryDataService implements InMemoryDbService {
     description: "Power 9 Original Card",
     creator: "Christopher Rush",
     imgUrl: "https://static.cardkingdom.com/images/magic-the-gathering/unlimited/mox-ruby-86403.jpg",
-    type: "Red"
+    type: "Green"
 
   },
   {
@@ -87,8 +87,8 @@ export class InMemoryDataService implements InMemoryDbService {
   constructor() { }
 
   createDb() {
-    const magicCard = this.CARDLIST
-    return {magicCard};
+    const magic = this.CARDLIST
+    return {magic};
   }
 
   genId(Content: Content[]): number {

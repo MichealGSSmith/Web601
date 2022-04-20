@@ -8,7 +8,8 @@ import {Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 export class HoverAffectDirective {
     @Input() elementType?: string;
-    @Input() firstOrLast?: boolean;
+    @Input() first?: boolean;
+    @Input() last?: boolean;
 
     originalElementBorder:string;
 
@@ -21,7 +22,7 @@ export class HoverAffectDirective {
             this.elm.nativeElement.style.textDecoration = "underline";
         } else if (this.elementType == "tag" ) {
             this.elm.nativeElement.style.fontWeight = "bold";
-        } else if (this.elementType == "card" && this.firstOrLast) {
+        } else if (this.elementType == "card" && (this.first || this.last)) {
             this.elm.nativeElement.style.border = "4px dashed"
         }
     }
@@ -30,9 +31,9 @@ export class HoverAffectDirective {
         if(this.elementType == "type") {
             this.elm.nativeElement.style.textDecoration = "initial";
         } else if (this.elementType == "tag") {
-            this.elm.nativeElement.fontWeight = "normal";
-        } else if (this.elementType == "card" && this.firstOrLast) {
-            this.elm.nativeElement.style = this.originalElementBorder;
+            this.elm.nativeElement.style.fontWeight = "normal";
+        } else if (this.elementType == "card" && (this.first || this.last)) {
+            this.elm.nativeElement.style.border = this.originalElementBorder;
         }
     }
 }

@@ -1,20 +1,24 @@
+<div *ngIf="content"> 
+    <h2 class="title">{{content?.title}}</h2>
+    <img (click)="imageClicked()" *ngIf="content.imgUrl" class="image" [src]="content.imgUrl">
+    <img (click)="imageClicked()" *ngIf="!content.imgUrl" class="image" src="https://mtgproshop.com/wp-content/uploads/2020/10/MTG-PW-Symbol.png.webp">
+    <p class="body">
+        {{content.description}}
+    </p>
+    <div class="meta-data">
+        <div class="creator">
+            {{content.creator}}
+        </div>
+        <div appHoverAffect elementType="type"*ngIf="content.type" class="content.type">
+            {{content.type}}
+        </div>
+        <div class="tags" *ngIf="content.tags">
+            <span appHoverAffect elementType="tag" class="tag" *ngFor="let tag of content.tags">{{tag}}</span>
+        
+        </div>
+    </div>
+</div>
 
-
-<h2 class="title">{{content?.title}}</h2>
-<img (click)="imageClicked()" *ngIf="content?.imgUrl" class="image" [src]="content?.imgUrl">
-<img (click)="imageClicked()" *ngIf="!content?.imgUrl" class="image" src="https://mtgproshop.com/wp-content/uploads/2020/10/MTG-PW-Symbol.png.webp">
-<p class="body">
-    {{content?.description}}
-</p>
-<div class="meta-data">
-    <div class="creator">
-        {{content?.creator}}
-    </div>
-    <div *ngIf="content?.type" class="content?.type">
-        {{content?.type}}
-    </div>
-    <div class="tags" *ngIf="content?.tags">
-        <span appHoverAffect elementType="tag" class="tag" *ngFor="let tag of content?.tags">{{tag}}</span>
-    
-    </div>
+<div *ngIf = "!content">
+    <p>You suck hahahahahahahah</p>
 </div>

@@ -10,8 +10,9 @@ export class ContentCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
-    
+if(this.content != undefined){
+    console.log(this.content.type); 
+}
   }
 
   imageClicked(): void {

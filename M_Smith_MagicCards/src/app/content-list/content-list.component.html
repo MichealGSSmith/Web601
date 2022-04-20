@@ -4,23 +4,23 @@
 <div class="search">
     <input #search>
     <button (click)="checkTitle(search.value)">Look For Card</button>
-    <h3 class="success" *ngIf="flag">Card Found</h3>
-    <h3 class="fail" *ngIf="!flag">Card Found</h3>    
+    <h3 class="success" *ngIf="theflag">Card Found</h3>
+    <h3 class="fail" *ngIf="theflag == false">Card Found</h3>   <!-- only show the fail is the flag is actually false. Don't show it if it's null or undefined -->  
 </div>
-<app-content-card appHoverAffect ElementType="card" [firstOrLast]="isFirstContentOnList || isLast" *ngFor="let item of (Content | typeFilter); first as isFirstContentOnList; last as isLast" [class.first-content]="isFirstContentOnList"
+<app-content-card appHoverAffect elementType="card" [first]="isitreallythefirstthing" [last]="isLast" *ngFor="let item of (Content | typeFilter: ''); first as isitreallythefirstthing; last as isLast" [class.first-thing]="isitreallythefirstthing"
 [content]="item" class="notype" [class.found]="item.title == search.value"></app-content-card>
 
-<app-content-card appHoverAffect ElementType="card" [firstOrLast]="isFirstContentOnList || isLast" *ngFor="let item of (Content | typeFilter: 'Red'); first as isFirstContentOnList; last as isLast" [class.first-content]="isFirstContentOnList"
+<app-content-card appHoverAffect elementType="card" [first]="isitreallythefirstthing" [last]="isLast" *ngFor="let item of (Content | typeFilter: 'Red'); first as isitreallythefirstthing; last as isLast" [class.first-content]="isitreallythefirstthing"
 [content]="item" class="Blue" [class.found]="item.title == search.value"></app-content-card>
 
-<app-content-card appHoverAffect ElementType="card" [firstOrLast]="isFirstContentOnList || isLast" *ngFor="let item of (Content | typeFilter: 'Green'); first as isFirstContentOnList; last as isLast" [class.first-content]="isFirstContentOnList"
+<app-content-card appHoverAffect elementType="card" [first]="isitreallythefirstthing" [last]="isLast" *ngFor="let item of (Content | typeFilter: 'Green'); first as isitreallythefirstthing; last as isLast" [class.first-content]="isitreallythefirstthing"
 [content]="item" class="Red" [class.found]="item.title == search.value"></app-content-card>
 
-<app-content-card appHoverAffect ElementType="card" [firstOrLast]="isFirstContentOnList || isLast" *ngFor="let item of (Content | typeFilter: 'Black'); first as isFirstContentOnList; last as isLast" [class.first-content]="isFirstContentOnList"
+<app-content-card appHoverAffect elementType="card" [first]="isitreallythefirstthing" [last]="isLast" *ngFor="let item of (Content | typeFilter: 'Black'); first as isitreallythefirstthing; last as isLast" [class.first-content]="isitreallythefirstthing"
 [content]="item" class="White" [class.found]="item.title == search.value"></app-content-card>
 
-<app-content-card appHoverAffect ElementType="card" [firstOrLast]="isFirstContentOnList || isLast" *ngFor="let item of (Content | typeFilter: 'Blue'); first as isFirstContentOnList; last as isLast" [class.first-content]="isFirstContentOnList"
+<app-content-card appHoverAffect elementType="card" [first]="isitreallythefirstthing" [last]="isLast" *ngFor="let item of (Content | typeFilter: 'Blue'); first as isitreallythefirstthing; last as isLast" [class.first-content]="isitreallythefirstthing"
 [content]="item" class="Black" [class.found]="item.title == search.value"></app-content-card>
 
-<app-content-card appHoverAffect ElementType="card" [firstOrLast]="isFirstContentOnList || isLast" *ngFor="let item of (Content | typeFilter: 'White'); first as isFirstContentOnList; last as isLast" [class.first-content]="isFirstContentOnList"
+<app-content-card appHoverAffect elementType="card" [first]="isitreallythefirstthing" [last]="isLast" *ngFor="let item of (Content | typeFilter: 'White'); first as isitreallythefirstthing; last as isLast" [class.first-content]="isitreallythefirstthing"
 [content]="item" class="Green" [class.found]="item.title == search.value"></app-content-card>

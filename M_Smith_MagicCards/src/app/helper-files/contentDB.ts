@@ -15,7 +15,7 @@ export const CARDLIST: Content[] = [{
     description: "Power 9 Original Card",
     creator: "Christopher Rush",
     imgUrl: "https://static.cardkingdom.com/images/magic-the-gathering/unlimited/mox-ruby-86403.jpg",
-    type: "Red"
+    type: "Green"
 
   },
   {

@@ -10,7 +10,7 @@ import { MagicServicesService } from '../services/magic-services.service';
 export class ContentListComponent implements OnInit {
   
   message: string = "";
-  flag: boolean = false;
+  theflag?: boolean;
   Content: Content[] = [];
 
   constructor(private magicService: MagicServicesService) {
@@ -24,14 +24,14 @@ export class ContentListComponent implements OnInit {
       this.Content = list;
     });
   }
-  checkTitle(search: string): void{
-    let searchList = this.Content.filter(content => content.title == search);
+  checkTitle(thingtofind: string): void{
+    let searchList = this.Content.filter(content => content.title == thingtofind);
     if (searchList.length > 0) {
       this.message = "Found Your Card!!";
-      this.flag = true;
+      this.theflag = true;
     } else {
       this.message = "Dude thats not even on the list!";
-      this.flag = false;
+      this.theflag = false;
     }
   }
   addContentToList(newContentItem: Content): void{

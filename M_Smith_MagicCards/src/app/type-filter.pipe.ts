@@ -7,17 +7,19 @@ import { Content } from "./helper-files/content-interface";
 })
 
 export class TypeFilterPipe implements PipeTransform {
-    transform(content: Content[], filterByThisType?: string): Content[] {
+    transform(content: Content[], filterByThisType: string): Content[] {
         
     
         console.log("Value: ", filterByThisType);
 
         return content.filter(c=> {
-            if (filterByThisType) {
-                return c.type == filterByThisType;
-            } else {
-                return !c.type;
+            if (c.type == filterByThisType ) {
+                return true;
+            } 
+            else if(filterByThisType == ''){
+                return c.type == undefined;
             }
+            return false
         });
     }
 }
